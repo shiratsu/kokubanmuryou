@@ -7,39 +7,110 @@
 //
 
 #import <XCTest/XCTest.h>
+#import "OCMock.h"
 #import "ViewController.h"
+#import "DrawingView.h"
 
 @interface ViewControllerTests : XCTestCase
 
-@property (nonatomic, strong) ViewController *vc;
-
 @end
 
-@implementation ViewControllerTests
+@implementation ViewControllerTests{
+    ViewController *vc;
+    id mockelaser;
+    id mockchook1;
+    id mockchook2;
+    id mockchook3;
+    id mockchook4;
+    id mockchook5;
+    id mockmenu;
+    id mockcurdraiwingview;
+    id mockpastdraiwingview;
+    id mockViewCotnroller;
+}
 
 - (void)setUp
 {
     [super setUp];
+//    
+    //UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main_iPhone" bundle:nil];
+    //vc = [storyboard instantiateViewControllerWithIdentifier:@"kokuban_iphone"];
+    vc = [[ViewController alloc] init];
     
-    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main_iPhone" bundle:nil];
-    self.vc = [storyboard instantiateViewControllerWithIdentifier:@"kokuban_iphone"];
-    [self.vc performSelectorOnMainThread:@selector(loadView) withObject:nil waitUntilDone:YES];
+    //とりあえず、モックを作りまくる
+    mockelaser = [OCMockObject mockForClass:[UIButton class]];
+    mockchook1 = [OCMockObject mockForClass:[UIButton class]];
+    mockchook2 = [OCMockObject mockForClass:[UIButton class]];
+    mockchook3 = [OCMockObject mockForClass:[UIButton class]];
+    mockchook4 = [OCMockObject mockForClass:[UIButton class]];
+    mockchook5 = [OCMockObject mockForClass:[UIButton class]];
+    mockmenu    = [OCMockObject mockForClass:[UIButton class]];
+    mockcurdraiwingview    = [OCMockObject mockForClass:[DrawingView class]];
+    mockpastdraiwingview    = [OCMockObject mockForClass:[DrawingView class]];
+    mockViewCotnroller = [OCMockObject mockForClass:[ViewController class]];
+    
+    
+    vc.chook1 = mockchook1;
+    vc.chook2 = mockchook2;
+    vc.chook3 = mockchook3;
+    vc.chook4 = mockchook4;
+    vc.chook5 = mockchook5;
+    vc.menu = mockmenu;
+    vc.curDrawingView = mockcurdraiwingview;
+    vc.pastDrawingView = mockpastdraiwingview;
+    //[self.vc performSelectorOnMainThread:@selector(loadView) withObject:nil waitUntilDone:YES];
     // Put setup code here. This method is called before the invocation of each test method in the class.
 }
 
 - (void)tearDown
 {
     // Put teardown code here. This method is called after the invocation of each test method in the class.
+    vc = nil;
     [super tearDown];
 }
 
 - (void)testExample
 {
-    XCTFail(@"No implementation for \"%s\"", __PRETTY_FUNCTION__);
+    //XCTFail(@"No implementation for \"%s\"", __PRETTY_FUNCTION__);
+    XCTAssertTrue(TRUE);
 }
 
 - (void)testViewController1
 {
+    XCTAssertTrue(TRUE);
+    NSLog(@"%@",vc);
+    id mock = [OCMockObject niceMockForClass:UIImage.class];
+    BOOL boolWriteFile = [vc writeImage:mock toFile:@"test"];
+    NSLog(@"writeval:%d",boolWriteFile);
+    
+    XCTAssertTrue(boolWriteFile);
+}
+
+- (void)testViewWillAppear
+{
+    [vc viewWillAppear:YES];
+    NSLog(@"vc.kokubanMode:%d",vc.kokubanMode);
+    XCTAssertTrue(vc.kokubanMode);
+}
+
+- (void)testTakeGrabScreenImage
+{
+    UIImage *obj = [vc takeGrabScreenImage];
+    BOOL imgFlag = false;
+    if(obj){
+        imgFlag = TRUE;
+    };
+    
+    XCTAssertTrue(vc.kokubanMode);
+    
+}
+
+- (void)testChook1
+{
+    [[mockViewCotnroller expect] Allstand:1];
+    [[mockViewCotnroller expect] setPenColor:0];
+    [vc chook1:vc.chook1];
+    [mockViewCotnroller verify];
 }
 
 @end

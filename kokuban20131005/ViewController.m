@@ -11,25 +11,20 @@
 #import "Line.h"
 
 #define INDICATOR_TAG 100
+#define GAD_SIMULATOR_ID @"Simulator"
 
 @interface ViewController ()
-- (BOOL)writeImage:(UIImage*)inImage toFile:(NSString*)fileName;
+
 -(void)startAnimating;
 -(void)stopAnimating;
--(void) elase;
--(void) Allstand : (int) stand;
--(IBAction) chook1 :(id) sender ;
--(IBAction) chook2 :(id) sender ;
--(IBAction) chook3 :(id) sender ;
--(IBAction) chook4 :(id) sender ;
--(IBAction) chook5 :(id) sender ;
+
 -(IBAction) showActionSheet :(id) sender ;
 -(IBAction)showEraseSheet:(id)sender;
 -(void)store;
 -(void)doUndo:(id)sender;
 -(void)doAllUndo:(id)sender;
 -(void)onTouchUpInsideBtnCapture;
--(UIImage *)takeGrabScreenImage;
+
 -(void)gotoNext;
 -(void)showBuyConfirmAlert;
 -(void)gotoAppStore;
@@ -37,6 +32,11 @@
 @end
 
 @implementation ViewController
+@synthesize  kokubanMode;
+@synthesize  yukiMode;
+@synthesize  billingMode;
+@synthesize  linedepth;
+@synthesize  penWhite,penRed,penYellow,penBlue,penBlack,penGreen,penAlpha;
 
 - (void)startAnimating {
     
@@ -65,6 +65,7 @@
 		penBlue		= components[idx*4+2];
 		penAlpha	= components[idx*4+3];
 	}
+    NSLog(@"ooooooooooooooooooooooooooo");
 }
 
 
@@ -74,6 +75,7 @@
 -(void) chook1 :(id) sender {
 	[self Allstand:1];
 	[self setPenColor:0];
+    NSLog(@"testeststeststtsetetsestttttststwesssetsts");
     kokubanMode = YES;
 }
 
@@ -616,9 +618,11 @@
     // the user wherever the ad goes and add it to the view hierarchy.
     bannerView_.rootViewController = self;
     [self.view addSubview:bannerView_];
+    GADRequest *request = [GADRequest request];
+//    request.testDevices = [NSArray arrayWithObjects:GAD_SIMULATOR_ID, nil];
     
     // Initiate a generic request to load it with an ad.
-    [bannerView_ loadRequest:[GADRequest request]];
+    [bannerView_ loadRequest:request];
     
     kokubanMode = YES;
     
@@ -760,7 +764,9 @@
         linedepth = kLineDepth;
     }
     
+
 }
+
 
 -(void)viewWillDisappear:(BOOL)animated {
 	
