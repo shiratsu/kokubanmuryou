@@ -27,6 +27,9 @@
     id mockcurdraiwingview;
     id mockpastdraiwingview;
     id mockViewCotnroller;
+    id mockactionsheet;
+    id mockview;
+
 }
 
 - (void)setUp
@@ -48,6 +51,8 @@
     mockcurdraiwingview    = [OCMockObject mockForClass:[DrawingView class]];
     mockpastdraiwingview    = [OCMockObject mockForClass:[DrawingView class]];
     mockViewCotnroller = [OCMockObject mockForClass:[ViewController class]];
+    mockactionsheet = [OCMockObject mockForClass:[UIActionSheet class]];
+    mockview = [OCMockObject mockForClass:[UIView class]];
     
     
     vc.chook1 = mockchook1;
@@ -58,6 +63,8 @@
     vc.menu = mockmenu;
     vc.curDrawingView = mockcurdraiwingview;
     vc.pastDrawingView = mockpastdraiwingview;
+    
+    //vc.view = mockview;
     //[self.vc performSelectorOnMainThread:@selector(loadView) withObject:nil waitUntilDone:YES];
     // Put setup code here. This method is called before the invocation of each test method in the class.
 }
@@ -107,10 +114,35 @@
 
 - (void)testChook1
 {
-    [[mockViewCotnroller expect] Allstand:1];
-    [[mockViewCotnroller expect] setPenColor:0];
+    id mockVC = [OCMockObject partialMockForObject:vc];
+    [[mockVC expect] Allstand:1];
+    [[mockVC expect] setPenColor:0];
     [vc chook1:vc.chook1];
-    [mockViewCotnroller verify];
+    [mockVC verify];
 }
+
+- (void)testAnother
+{
+    [vc chook1:vc.chook1];
+    XCTAssertTrue(vc.kokubanMode);
+}
+
+-(void)testElaseSheet
+{
+    UIWindow* window = [[[UIApplication sharedApplication] delegate] window];
+    
+    if ([window.subviews containsObject:vc.view]) {
+        [[mockactionsheet expect] showInView:vc.view];
+    } else {
+        [[mockactionsheet expect] showInView:window];
+    }
+    
+    
+    vc.aActionSheet = mockactionsheet;
+    [vc showEraseSheet:mockelaser];
+    [mockactionsheet verify];
+    
+}
+
 
 @end

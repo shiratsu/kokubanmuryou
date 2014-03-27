@@ -32,6 +32,7 @@
 @end
 
 @implementation ViewController
+@synthesize  aActionSheet;
 @synthesize  kokubanMode;
 @synthesize  yukiMode;
 @synthesize  billingMode;

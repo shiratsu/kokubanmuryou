@@ -53,6 +53,7 @@ UIActionSheetDelegate>
     BOOL yukiMode;
     BOOL billingMode;
 }
+@property(nonatomic) UIActionSheet *aActionSheet;
 @property(weak,nonatomic) IBOutlet UIImageView *aImageView;
 @property(weak,nonatomic) IBOutlet UIButton *showBtn;
 @property(weak,nonatomic) IBOutlet UIButton *menu;
@@ -81,5 +82,6 @@ UIActionSheetDelegate>
 -(void) chook4 :(id) sender ;
 -(void) chook5 :(id) sender ;
 -(UIImage *) takeGrabScreenImage;
+-(void)showEraseSheet:(id)sender;
 
 @end
