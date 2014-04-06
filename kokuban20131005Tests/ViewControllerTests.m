@@ -129,13 +129,10 @@
 
 -(void)testElaseSheet
 {
-    UIWindow* window = [[[UIApplication sharedApplication] delegate] window];
+    //UIWindow* window = [[[UIApplication sharedApplication] delegate] window];
     
-    if ([window.subviews containsObject:vc.view]) {
-        [[mockactionsheet expect] showInView:vc.view];
-    } else {
-        [[mockactionsheet expect] showInView:window];
-    }
+    [[mockactionsheet expect] showInView:[[[[UIApplication sharedApplication] keyWindow] subviews] lastObject]];
+
     
     
     vc.aActionSheet = mockactionsheet;
