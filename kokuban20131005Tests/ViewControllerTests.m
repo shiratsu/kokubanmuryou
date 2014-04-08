@@ -127,19 +127,19 @@
     XCTAssertTrue(vc.kokubanMode);
 }
 
--(void)testElaseSheet
-{
-    //UIWindow* window = [[[UIApplication sharedApplication] delegate] window];
-    
-    [[mockactionsheet expect] showInView:[[[[UIApplication sharedApplication] keyWindow] subviews] lastObject]];
-
-    
-    
-    vc.aActionSheet = mockactionsheet;
-    [vc showEraseSheet:mockelaser];
-    [mockactionsheet verify];
-    
-}
+//-(void)testElaseSheet
+//{
+//    //UIWindow* window = [[[UIApplication sharedApplication] delegate] window];
+//    
+//    [[mockactionsheet expect] showInView:[[[[UIApplication sharedApplication] keyWindow] subviews] lastObject]];
+//
+//    
+//    
+//    vc.aActionSheet = mockactionsheet;
+//    [vc showEraseSheet:mockelaser];
+//    [mockactionsheet verify];
+//    
+//}
 
 
 @end
