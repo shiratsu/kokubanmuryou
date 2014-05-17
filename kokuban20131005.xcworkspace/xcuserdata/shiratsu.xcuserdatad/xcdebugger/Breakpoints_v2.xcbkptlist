@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "kokuban20131005/ViewController.m"
-            timestampString = "417626585.358108"
+            timestampString = "421984977.993974"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "760"
-            endingLineNumber = "760"
+            startingLineNumber = "759"
+            endingLineNumber = "759"
             landmarkName = "-viewWillAppear:"
             landmarkType = "5">
          </BreakpointContent>

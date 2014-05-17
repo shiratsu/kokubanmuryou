@@ -14,30 +14,28 @@
 #define GAD_SIMULATOR_ID @"Simulator"
 
 @interface ViewController ()
-
+- (BOOL)writeImage:(UIImage*)inImage toFile:(NSString*)fileName;
 -(void)startAnimating;
 -(void)stopAnimating;
-
+-(void) elase;
+-(void) Allstand : (int) stand;
+-(IBAction) chook1 :(id) sender ;
+-(IBAction) chook2 :(id) sender ;
+-(IBAction) chook3 :(id) sender ;
+-(IBAction) chook4 :(id) sender ;
+-(IBAction) chook5 :(id) sender ;
 -(IBAction) showActionSheet :(id) sender ;
 -(IBAction)showEraseSheet:(id)sender;
 -(void)store;
 -(void)doUndo:(id)sender;
 -(void)doAllUndo:(id)sender;
 -(void)onTouchUpInsideBtnCapture;
-
+-(UIImage *)takeGrabScreenImage;
 -(void)gotoNext;
--(void)showBuyConfirmAlert;
--(void)gotoAppStore;
-
 @end
 
 @implementation ViewController
-@synthesize  aActionSheet;
-@synthesize  kokubanMode;
-@synthesize  yukiMode;
-@synthesize  billingMode;
-@synthesize  linedepth;
-@synthesize  penWhite,penRed,penYellow,penBlue,penBlack,penGreen,penAlpha;
+
 
 - (void)startAnimating {
     
@@ -149,7 +147,7 @@
                         delegate:self
                         cancelButtonTitle:@"Cancel"
                         destructiveButtonTitle:nil
-                        otherButtonTitles:@"写真を選ぶ", @"ライブラリに保存", @"黒板を表示",@"雪結晶",@"チョークを使う",@"線の太さを変える",@"黒板の有料版を購入",nil];
+                        otherButtonTitles:@"写真を選ぶ", @"ライブラリに保存", @"黒板を表示",@"ひまわり",@"チョークを使う",@"線の太さを変える",@"黒板の有料版を購入",nil];
         
 
     }else{
@@ -158,7 +156,7 @@
                         delegate:self
                         cancelButtonTitle:@"Cancel"
                         destructiveButtonTitle:nil
-                        otherButtonTitles:@"写真を選ぶ", @"ライブラリに保存", @"黒板を表示",@"雪結晶",@"チョークを使う",@"線の太さを変える",nil];
+                        otherButtonTitles:@"写真を選ぶ", @"ライブラリに保存", @"黒板を表示",@"ひまわり",@"チョークを使う",@"線の太さを変える",nil];
         
     }
     aActionSheet.tag=2;
@@ -500,6 +498,7 @@
 	}
 	switch (stand) {
 		case 1:
+            NSLog(@"test");
 			chook1.transform	= CGAffineTransformMakeRotation(10);
 			break;
 		case 2:
@@ -536,7 +535,8 @@
 - (BOOL)writeImage:(UIImage*)inImage toFile:(NSString*)fileName {
 	NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
 	NSString *documentsDirectory = [paths objectAtIndex:0];
-	if (!documentsDirectory) {
+	
+    if (!documentsDirectory) {
 		return NO;
 	}
 	NSString *appFile = [documentsDirectory stringByAppendingPathComponent:fileName];
@@ -652,7 +652,7 @@
 - (void)stockStroke:(NSSet *)touches {
 	UITouch *touch = [touches anyObject];
 	CGPoint pos = [touch locationInView:curDrawingView];
-    //	NSLog(@"%d:%03.0f,%03.0f",[touch phase],pos.x,pos.y);
+    //NSLog(@"%d:%03.0f,%03.0f",[touch phase],pos.x,pos.y);
     
     if (! [[touch view] isEqual:curDrawingView]) {
 		return;
@@ -716,7 +716,7 @@
     }else{
         UIImage *image = nil;
         if(yukiMode == YES){
-            image = [UIImage imageNamed:@"snow.png"];
+            image = [UIImage imageNamed:@"ico_himawari1"];
         }
         UIImageView *iv = [[UIImageView alloc] initWithImage:image];
         

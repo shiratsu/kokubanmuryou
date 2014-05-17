@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		34B551821EE942B98B740536 /* libPods-kokuban20131005Tests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B0E44A269D94C818AE9FA16 /* libPods-kokuban20131005Tests.a */; };
 		582A5FD918A7CAFB00242C25 /* snow.png in Resources */ = {isa = PBXBuildFile; fileRef = 582A5FD818A7CAFB00242C25 /* snow.png */; };
+		58372ECA192587F300740A38 /* ico_uchiwa02_min.png in Resources */ = {isa = PBXBuildFile; fileRef = 58372EC9192587F300740A38 /* ico_uchiwa02_min.png */; };
+		58372ECC1925880F00740A38 /* ico_himawari1.png in Resources */ = {isa = PBXBuildFile; fileRef = 58372ECB1925880F00740A38 /* ico_himawari1.png */; };
 		5871C42B1812BAF30088B4E2 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5871C42A1812BAF30088B4E2 /* StoreKit.framework */; };
 		587CDEEC18DA066700A0662E /* ViewControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 587CDEEB18DA066700A0662E /* ViewControllerTests.m */; };
 		587D088118DBFC1200825500 /* libGoogleAdMobAds.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 587D088018DBFC1200825500 /* libGoogleAdMobAds.a */; };
@@ -109,6 +111,8 @@
 /* Begin PBXFileReference section */
 		2B0E44A269D94C818AE9FA16 /* libPods-kokuban20131005Tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-kokuban20131005Tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		582A5FD818A7CAFB00242C25 /* snow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = snow.png; sourceTree = "<group>"; };
+		58372EC9192587F300740A38 /* ico_uchiwa02_min.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ico_uchiwa02_min.png; sourceTree = "<group>"; };
+		58372ECB1925880F00740A38 /* ico_himawari1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ico_himawari1.png; sourceTree = "<group>"; };
 		5871C42A1812BAF30088B4E2 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		587CDEEB18DA066700A0662E /* ViewControllerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewControllerTests.m; sourceTree = "<group>"; };
 		587D087718DBFC1200825500 /* GADAdMobExtras.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADAdMobExtras.h; sourceTree = "<group>"; };
@@ -352,6 +356,8 @@
 		5882C6A11800E802002F34B6 /* image */ = {
 			isa = PBXGroup;
 			children = (
+				58372ECB1925880F00740A38 /* ico_himawari1.png */,
+				58372EC9192587F300740A38 /* ico_uchiwa02_min.png */,
 				588B617A18BF900E004A7AA5 /* sen5.png */,
 				588B617B18BF900E004A7AA5 /* sen10.png */,
 				582A5FD818A7CAFB00242C25 /* snow.png */,
@@ -510,6 +516,8 @@
 				5882C6D61800E844002F34B6 /* elaser.png in Resources */,
 				582A5FD918A7CAFB00242C25 /* snow.png in Resources */,
 				5882C71B18019504002F34B6 /* icon-76.png in Resources */,
+				58372ECC1925880F00740A38 /* ico_himawari1.png in Resources */,
+				58372ECA192587F300740A38 /* ico_uchiwa02_min.png in Resources */,
 				587F7C5818BA549B00DEAFF2 /* Line.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -692,8 +700,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD)";
-				CODE_SIGN_IDENTITY = "iPhone Distribution: SHUNSUKE HIRATSUKA (GSX2TRMV6J)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: SHUNSUKE HIRATSUKA (GSX2TRMV6J)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: SHUNSUKE HIRATSUKA (B5H482T6YN)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "kokuban20131005/kokuban20131005-Prefix.pch";
 				INFOPLIST_FILE = "kokuban20131005/kokuban20131005-Info.plist";
@@ -706,7 +714,7 @@
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "7A3580D0-D9B0-4E96-B4AE-02D64FB14AF3";
+				PROVISIONING_PROFILE = "5EF9E535-BBF5-4DAA-A7AB-19EE8819853D";
 				VALID_ARCHS = "armv7 armv7s arm64 armv6";
 				WRAPPER_EXTENSION = app;
 			};
@@ -718,6 +726,8 @@
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/kokuban20131005.app/kokuban20131005";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: SHUNSUKE HIRATSUKA (GSX2TRMV6J)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: SHUNSUKE HIRATSUKA (GSX2TRMV6J)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -731,6 +741,7 @@
 					/Users/shiratsu/Documents/kokuban20131005/kokuban20131005,
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "7A3580D0-D9B0-4E96-B4AE-02D64FB14AF3";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -775,8 +786,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD)";
-				CODE_SIGN_IDENTITY = "iPhone Distribution: SHUNSUKE HIRATSUKA (GSX2TRMV6J)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: SHUNSUKE HIRATSUKA (GSX2TRMV6J)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "kokuban20131005/kokuban20131005-Prefix.pch";
 				INFOPLIST_FILE = "kokuban20131005/kokuban20131005-Info.plist";
@@ -789,7 +800,7 @@
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "0745995E-118B-4F45-89DC-BC733C2828B7";
+				PROVISIONING_PROFILE = "5EF9E535-BBF5-4DAA-A7AB-19EE8819853D";
 				VALID_ARCHS = "armv7 armv7s arm64 armv6";
 				WRAPPER_EXTENSION = app;
 			};
@@ -814,6 +825,7 @@
 					/Users/shiratsu/Documents/kokuban20131005/kokuban20131005,
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "C1B1AAC6-D4AF-40B3-B224-6D3DCDC0871B";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -836,7 +848,7 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: SHUNSUKE HIRATSUKA (B5H482T6YN)";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -898,7 +910,7 @@
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD)";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: SHUNSUKE HIRATSUKA (B5H482T6YN)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "kokuban20131005/kokuban20131005-Prefix.pch";
 				INFOPLIST_FILE = "kokuban20131005/kokuban20131005-Info.plist";
@@ -947,6 +959,8 @@
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/kokuban20131005.app/kokuban20131005";
+				CODE_SIGN_IDENTITY = "iPhone Developer: SHUNSUKE HIRATSUKA (B5H482T6YN)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: SHUNSUKE HIRATSUKA (B5H482T6YN)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -964,6 +978,7 @@
 					/Users/shiratsu/Documents/kokuban20131005/kokuban20131005,
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "C525E71F-E878-4CE1-8305-638A1EC5246A";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -975,6 +990,7 @@
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/kokuban20131005.app/kokuban20131005";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: SHUNSUKE HIRATSUKA (GSX2TRMV6J)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
