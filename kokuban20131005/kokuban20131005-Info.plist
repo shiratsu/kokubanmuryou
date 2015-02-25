@@ -46,6 +46,20 @@
 	<string>????</string>
 	<key>CFBundleVersion</key>
 	<string>2.0.5</string>
+	<key>Fabric</key>
+	<dict>
+		<key>APIKey</key>
+		<string>07e9dab2e311c6f10370cd83aa01c97b4f8ec282</string>
+		<key>Kits</key>
+		<array>
+			<dict>
+				<key>KitInfo</key>
+				<dict/>
+				<key>KitName</key>
+				<string>Crashlytics</string>
+			</dict>
+		</array>
+	</dict>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>UILaunchImageFile~ipad</key>
